@@ -1,0 +1,129 @@
+/* Background Section */
+.live-counter {
+    text-align: center;
+    padding: 0px 20px; /* Section height remains increased */
+    color: white;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  /* Title */
+  .counter-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 80px;
+  }
+  
+  /* Counter Container */
+  .counter-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    max-width: 90%;
+  }
+  
+  /* Counter Circle */
+  .counter-circle {
+    position: relative;
+    width: 160px; /* Increased size */
+    height: 160px; /* Increased size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .circle-background {
+    fill: none;
+    stroke: #2c2c2c;
+    stroke-width: 8;
+  }
+  
+  /* Circular Progress */
+  .circle-progress {
+    fill: none;
+    stroke: #00bcd4;
+    stroke-width: 8;
+    stroke-dasharray: 440; /* Circumference for r=70 */
+    stroke-dashoffset: 440;
+    transition: stroke-dashoffset 0.3s ease-in-out;
+  }
+  
+  /* Counter Content Inside Circle */
+  .counter-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .counter-circle h2 {
+    font-size: 1.75rem; /* Increased font size for the larger circle */
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+  }
+  
+  .counter-circle p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem; /* Increased font size */
+    font-weight: 300;
+  }
+  
+  /* Responsive for Tablets */
+  @media (max-width: 768px) {
+    .counter-title {
+      font-size: 2.5rem;
+    }
+  
+    .counter-circle {
+      width: 160px;
+      height: 160px;
+    }
+  
+    .circle-progress {
+      stroke-width: 6;
+    }
+  
+    .counter-circle h2 {
+      font-size: 1.6rem;
+    }
+  
+    .counter-circle p {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 480px) {
+    .counter-title {
+      font-size: 2rem;
+    }
+  
+    .counter-circle {
+      width: 160px;
+      height: 160px;
+    }
+  
+    .circle-progress {
+      stroke-width: 5;
+    }
+  
+    .counter-circle h2 {
+      font-size: 1.4rem;
+    }
+  
+    .counter-circle p {
+      font-size: 0.9rem;
+    }
+  }
+  
