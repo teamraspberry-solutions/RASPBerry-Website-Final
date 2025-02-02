@@ -1,0 +1,199 @@
+/* Footer Styling */
+.footer {
+    background-color: #000;
+    color: white;
+    padding: 4rem 0rem;
+    font-family: 'Roboto', sans-serif;
+    text-align: center; /* Center all text */
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center; /* Center the content */
+    align-items: flex-start;
+    gap: 15rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-brand {
+    max-width: 350px;
+    margin-right: 5px;
+}
+
+.footer-brand h2 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.footer-brand p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #bbb;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the links */
+    margin-top: 1rem;
+}
+
+.links-column {
+    max-width: 250px;
+    margin-right: 2rem;
+    text-align: center; /* Center text in links column */
+}
+
+.links-column h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.links-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links-column ul li {
+    margin-bottom: 1rem;
+}
+
+.links-column a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.links-column a:hover {
+    color: #4db8b8;
+}
+
+.footer-social {
+    max-width: 200px;
+    margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column; /* Stack the heading and icons vertically */
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-social h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Center the social icons */
+    align-items: center;
+    gap: 15px; /* Adjust gap between social icons */
+}
+
+.social-icons a {
+    color: #bbb;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+/* Social Icons Styling */
+.social-icons img {
+    height: 40px;  /* Adjust the height of the icons */
+    width: 40px;   /* Ensure the width is the same as the height */
+    object-fit: contain; /* Ensures icons don't get stretched or distorted */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for scale and shadow */
+}
+
+/* Hover Effects for Social Icons */
+.social-icons a:hover img {
+    transform: scale(1.1); /* Increase icon size slightly */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+}
+
+.social-icons a:hover {
+    color: #4db8b8; /* Change color on hover */
+    transform: translateY(-5px); /* Slight vertical movement */
+}
+
+/* Footer Text */
+.footer-text {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #888;
+    padding-top: 2rem;
+    border-top: 1px solid #444;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .footer-brand {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .footer-social {
+        margin-top: 1.5rem;
+        align-items: center;
+    }
+
+    .footer-text {
+        font-size: 0.9rem;
+    }
+
+    .social-icons a {
+        font-size: 2rem;
+    }
+
+    .footer-brand h2 {
+        font-size: 2.5rem;
+    }
+
+    .footer-links a {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-brand h2 {
+        font-size: 2rem;
+    }
+
+    .footer-text {
+        font-size: 0.8rem;
+    }
+
+    .social-icons a {
+        font-size: 1.5rem;
+    }
+
+    .links-column h4 {
+        font-size: 1rem;
+    }
+}

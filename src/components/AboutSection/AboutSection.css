@@ -1,0 +1,128 @@
+/* General Styles for About Section */
+.about {
+  opacity: 0;
+  transform: translateY(50px);
+  scale: 0.95; /* Slightly smaller to make it pop */
+  transition: opacity 1s ease-out, transform 1s ease-out, scale 0.8s ease-out;
+  padding: 20px 5px;
+  background-color: #000; /* Dark background */
+  position: relative;
+  overflow: hidden;
+
+}
+
+/* When About section becomes visible */
+.about.fade-in-up {
+  opacity: 1;
+  transform: translateY(0);
+  scale: 1;
+}
+
+/* Subtle Background Animation */
+.about:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.about.fade-in-up:before {
+  opacity: 1;
+}
+
+/* Main Content Styling */
+.about-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* About Section Heading Animation */
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  background: linear-gradient(to right, #004d4d, #008080, #66b2b2); /* Same gradient as Hero */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInHeader 1.5s ease-out forwards, bounceIn 1s ease-out 1.2s; /* Add bounce effect */
+}
+
+/* Paragraph Styling */
+p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+  max-width: 1500px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeInText 1.2s ease-out 1.5s forwards; /* Add delay for paragraph */
+}
+
+/* Heading Fade-In and Bounce Effect */
+@keyframes fadeInHeader {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Bounce Effect for Header */
+@keyframes bounceIn {
+  0% {
+    transform: translateY(-30px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Paragraph Fade-In Effect */
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .about h1 {
+    font-size: 2.5rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about h1 {
+    font-size: 2rem;
+  }
+
+  .about p {
+    font-size: 0.9rem;
+  }
+}

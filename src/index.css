@@ -1,0 +1,316 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: rgb(0, 0, 0);
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/*_______________________________________________________________________________________*/
+
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background-color: #000000; /* Background color of hero */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+}
+
+.hero h1, .hero p {
+  font-size: 3rem;
+  text-align: center;
+  transform-origin: center;
+  transition: transform 0.5s ease-out, opacity 1s ease-out;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.hero.zoomed h1, .hero.zoomed p {
+  transform: scale(2); /* Zoom in */
+  opacity: 0; /* Fade out after zoom */
+}
+
+/* When Scrolling: Text Moves Apart and Zooms Out */
+.hero.scrolled h1 {
+  animation: zoomOut 1.2s ease-out forwards;
+}
+
+.hero.scrolled p {
+  animation: zoomOut 1.2s ease-out forwards;
+}
+
+/* About Section - Initially Hidden */
+.about {
+  opacity: 0;
+  transform: scale(0.5) translateY(50px);
+  transition: opacity 0.8s ease-out, transform 1s ease-out;
+}
+
+/* When About Section Appears */
+.about.zoom-in {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* When About Section Appears */
+.about.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Zoom Effect */
+.hero.zoomed .overlay h1, .hero.zoomed .overlay p {
+  transform: scale(2); /* Zoom in */
+  opacity: 0; /* Fade out after zoom */
+}
+
+.overlay {
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #004d4d, #008080, #66b2b2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  transition: transform 0.3s ease;
+
+}
+
+.overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: white;
+}
+
+/* When Zoom Effect Happens */
+.overlay.zoomed {
+  transform: scale(1.5); /* Adjust the zoom effect */
+}
+
+
+.hero .overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  transition: transform 0.5s ease-out, opacity 1s ease-out;
+}
+
+/* Prevent movement during zoom */
+.hero.zoomed .overlay {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1); /* Stay centered */
+}
+
+
+/* Smooth Zoom-Out Effect for Hero Section */
+@keyframes zoomOut {
+  from {
+      transform: scale(1);
+      opacity: 1;
+  }
+  to {
+      transform: scale(2);
+      opacity: 0;
+  }
+}
+
+/* Animation for Slideshow */
+@keyframes slide-animation {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+/* Media Query */
+@media (max-width: 768px) {
+  .overlay h1 {
+      font-size: 2rem;
+  }
+  .overlay p {
+      font-size: 1rem;
+  }
+  .overlay .btn {
+      font-size: 0.9rem;
+  }
+}
+
+/* New section */
+section {
+  text-align: center;
+  padding: 40px;
+}
+h1 {
+  font-size: 28px;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+p {
+  justify-content: center;
+  font-size: 16px;
+  color: white;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.feature-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.feature {
+  background-color: #16294e;
+  border-radius: 8px;
+  padding: 20px;
+  width: 280px;
+  height: 300px;
+  text-align: center;
+}
+h3 {
+  color: #8cb5f2;
+}
+
+.feature img {
+  width: 200px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+/* General Section Styling */
+.download-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+/* Wrapper for Image and Content */
+.content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px; /* Space between image and content */
+  max-width: 1200px;
+  width: 100%;
+  border-left: 2px solid #ddd; /* Line between sections */
+  padding-left: 20px;
+}
+
+/* Mobile App Image */
+.mobile-image img {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Styling */
+.content {
+  flex: 1; /* Take up remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.content h1 {
+  text-align: left;
+  font-size: 28px;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.content p {
+  text-align: left;
+  font-size: 16px;
+  color: #1A1A1A;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* App Store Images */
+.Apps {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: left; /* Center-align images horizontally */
+  align-items: center; /* Vertically align the images */
+  gap: 20px; /* Space between the app images */
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.img1 img {
+  width: 150px; /* Adjust size as needed */
+  transition: transform 0.3s; /* Add hover animation */
+}
+.img2 img {
+  width: 130px;
+  transition: transform 0.3s;
+}
+
+.img1 img:hover, .img2 img:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.nav-links a.active {
+  color: #008080;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-wrapper {
+      flex-direction: column;
+      align-items: center;
+      border-left: none;
+      padding-left: 0;
+  }
+
+  .mobile-image img {
+      width: 100%;
+      max-width: 300px;
+  }
+
+  .Apps {
+      justify-content: center;
+  }
+}
+
+h6 {
+  color: white;
+}
+
+.top {
+  float: right;
+  cursor: pointer;
+}
+.top img {
+  width: 100px;
+}
