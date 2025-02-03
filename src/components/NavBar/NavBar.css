@@ -10,61 +10,76 @@ body {
     background: black;
 }
 
+/* Navbar */
 nav {
     background: black;
     height: 80px;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
     z-index: 1000;
+    padding: 0 20px;
+    transition: background-color 0.3s ease;
 }
 
+
 .logo {
-    height: 60px;
+    height: 90px;
     width: 110px;
-    position: relative;
-    display: flex; /* Enables flexbox */
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo img {
     height: 100%;
-    width: 100%; 
-    object-fit: cover;
+    width: 100%;
+    object-fit: contain;
 }
 
-
+/* Nav links */
 .nav-links {
     display: flex;
     justify-content: space-around;
     width: 60%;
+    transition: transform 0.3s ease;
 }
 
 .nav-links li {
     list-style: none;
     padding-left: 50px;
+    position: relative;
 }
 
 .nav-links a {
-
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
+    padding-bottom: 5px;
+    transition: color 0.3s ease, transform 0.3s ease, border-bottom 0.3s ease;
+    position: relative;
+}
+
+/* Active link styling with animation */
+.nav-links a.active-link {
+    color: #008080;
+    font-size: 18px;
+    transition: transform 0.3s ease-in-out, color 0.3s ease, border-bottom 0.3s ease;
 }
 
 .nav-links a:hover {
     color: #008080;
 }
 
+/* Burger menu */
 .burger {
     display: none;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .burger div {
@@ -75,12 +90,18 @@ nav {
     transition: all 0.3s ease;
 }
 
+.burger:hover div {
+    background-color: #fff;
+}
+
+/* Main content styling */
 main {
     margin-top: 80px;
     padding: 20px;
     min-height: calc(100vh - 130px);
 }
 
+/* Footer */
 footer {
     background: black;
     color: #fff;
@@ -96,15 +117,16 @@ footer a {
     text-decoration: none;
     margin: 0 10px;
 }
-footer p{
+
+footer p {
     color: rgb(255, 255, 255);
 }
 
 footer a:hover {
-    text-decoration: underline;
+    text-decoration: underline;
 }
 
-
+/* Media Queries for responsiveness */
 @media screen and (max-width: 1024px) {
     .nav-links {
         width: 70%;
@@ -115,10 +137,10 @@ footer a:hover {
     body {
         overflow-x: hidden;
     }
-    
+
     .nav-links {
         position: absolute;
-        right: 0px;
+        right: 0;
         height: 92vh;
         top: 80px;
         background-color: white;
@@ -127,17 +149,20 @@ footer a:hover {
         align-items: center;
         width: 50%;
         transform: translateX(100%);
-        transition: transform 0.5s ease-in;
+        transition: transform 0.5s ease-in-out;
     }
-    
+
     .nav-links li {
         opacity: 0;
+        transform: translateX(50px);
+        animation: fadeIn 0.5s ease-out forwards;
     }
-    
+
     .burger {
         display: block;
     }
 }
+
 .nav-active {
     transform: translateX(0%);
 }
@@ -149,12 +174,23 @@ footer a:hover {
     }
     to {
         opacity: 1;
-        transform: translateX(0px);
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 
 .toggle .line1 {
-    transform: rotate(-45deg) translate(-5px,6px);
+    transform: rotate(-45deg) translate(-5px, 6px);
 }
 
 .toggle .line2 {
@@ -162,9 +198,5 @@ footer a:hover {
 }
 
 .toggle .line3 {
-    transform: rotate(45deg) translate(-5px,-6px);
-}
-
-.nav-links a.active {
-    color: #008080;
+    transform: rotate(45deg) translate(-5px, -6px);
 }

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import './NavBar.css';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom"; // ✅ Use NavLink instead of Link
+import "./NavBar.css";
 import logo from '../../Media/R_Robot.png';
 
 
@@ -18,13 +19,19 @@ const NavBar = () => {
       <div className="logo">
         <img src={logo} alt="Logo" />
       </div>
-      <ul className={`nav-links ${isNavActive ? 'nav-active' : ''}`}>
-        <li><a href="../main_page/Home.html" className="active">Home</a></li>
-        <li><a href="../team_page/team.html">Team</a></li>
-        <li><a href="../sponsorship_page/sponsorship.html">Sponsorship</a></li>
-        <li><a href="../gallery_page/gallery.html">Gallery</a></li>
-        <li><a href="../features_page/features.html">Features</a></li>
-        <li><a href="../Contact Us/contact.html">Contact Us</a></li>
+      <ul className={`nav-links ${isNavActive ? "nav-active" : ""}`}>
+        <li>
+          <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : ""}>Home</NavLink>
+        </li>
+        <li>
+          <NavLink to="/timeline" className={({ isActive }) => isActive ? "active-link" : ""}>Timeline</NavLink>
+        </li>
+        <li>
+          <NavLink to="/team" className={({ isActive }) => isActive ? "active-link" : ""}>About Us</NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact" className={({ isActive }) => isActive ? "active-link" : ""}>Contact Us</NavLink>
+        </li>
       </ul>
       <div className="burger" onClick={toggleNav}>
         <div className={`line1 ${isNavActive ? 'toggle' : ''}`}></div>

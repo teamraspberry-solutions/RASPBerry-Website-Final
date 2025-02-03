@@ -56,7 +56,7 @@
   background: linear-gradient(to right, #004d4d, #008080, #66b2b2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: textSlideIn 2s ease-out forwards;
+  animation: fadeInText 2s ease-out forwards;
 }
 
 /* Sub Heading Animation */
