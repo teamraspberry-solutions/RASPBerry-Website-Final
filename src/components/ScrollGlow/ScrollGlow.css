@@ -1,0 +1,53 @@
+/* Scroll Indicator - Hidden by Default */
+.scroll-glow-container {
+    position: fixed;
+    top: 0;
+    left: 15px;
+    height: 100vh;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Make it visible when user scrolls past hero section */
+.scroll-glow-container.visible {
+    opacity: 1;
+}
+
+/* SVG Styling */
+.scroll-glow-svg {
+    height: 100vh;
+    width: auto;
+}
+
+/* Background Path - Always Visible (Dimmed Line) */
+.scroll-path-bg {
+    stroke-linecap: round;
+}
+
+/* Glowing Progress Path */
+.scroll-path {
+    stroke-linecap: round;
+    transition: stroke 0.2s ease-in-out;
+    filter: drop-shadow(0px 0px 10px rgba(77, 184, 184, 0.5));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .scroll-glow-container {
+        width: 30px;
+        left: 5px;
+    }
+
+    .scroll-glow-svg {
+        opacity: 0.8;
+    }
+
+    .scroll-path {
+        stroke-width: 4;
+    }
+}

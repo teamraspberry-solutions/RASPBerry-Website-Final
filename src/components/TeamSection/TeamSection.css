@@ -1,0 +1,275 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #000; /* Dark background */
+    color: #fff; /* White text */
+}
+
+/* Team Section */
+.team-container {
+    margin-top: 80px;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+}
+
+/* SVG Background */
+.team-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./images/team.svg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.15;
+    z-index: -1;
+    filter: brightness(0) saturate(100%) invert(20%) sepia(50%) saturate(500%) hue-rotate(150deg);
+}
+
+
+/* Section Title */
+.team-title {
+    font-size: 36px;
+    background: linear-gradient(to right, #004d4d, #008080, #66b2b2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 40px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Team Cards Layout */
+.team-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px; /* Reduced spacing */
+    justify-items: center;
+    margin-top: 40px;
+}
+
+/* Team Card */
+.team-card {
+    background: #111; /* Blackish Card */
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0, 128, 128, 0.7); /* Adjusted glow */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px;
+    width: 100%;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Thin line for separation */
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 128, 128, 0.9);
+}
+
+/* Card Image */
+.team-card-img img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Card Text */
+.team-card-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.team-card-role {
+    font-size: 16px;
+    color: #ff6f61; /* Coral Color */
+    margin-bottom: 10px;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
+    backdrop-filter: blur(5px); /* Subtle blur effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    transition: opacity 0.1s ease, visibility 0.1s ease;
+}
+
+
+/* Show Modal */
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Content */
+.modal-content {
+    background: #111;
+    color: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 128, 128, 0.7);
+    
+    transform: scale(0.8); /* Initial size */
+    opacity: 0;
+    transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+}
+
+/* When Modal is Active */
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Profile Image */
+.modal-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px;
+    box-shadow: 0 0 10px rgba(0, 128, 128, 0.7);
+}
+
+/* Modal Left - Image */
+.modal-left {
+    flex: 1;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-left img {
+    width: 100%;
+    max-width: 250px; /* Limited image size */
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Modal Right - Details */
+.modal-right {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+    color: #fff;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 22px;
+    background: none;
+    border: none;
+    color: #ff6f61;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/* Modal Text */
+.modal-info {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    animation: fadeInText 0.1s ease-out 0.1s forwards; /* Faster appearance */
+}
+
+
+
+/* Modal Name */
+.modal-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Modal Role */
+.modal-role {
+    font-size: 16px;
+    color: #ff6f61;
+    margin-bottom: 10px;
+}
+
+/* Modal Description */
+.modal-description {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.close-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Social Links */
+.modal-socials a {
+    display: inline-block;
+    color: #008080;
+    font-size: 18px;
+    margin: 5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.modal-socials a:hover {
+    color: #ff6f61;
+    transform: scale(1.2);
+}
+
+/* Footer Glow */
+.footer-shadow {
+    height: 50px;
+    background: linear-gradient(to right, #004d4d, #008080, #66b2b2);
+    width: 100%;
+    margin-top: -50px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .team-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .modal-content {
+        flex-direction: column;
+    }
+
+    .modal-left {
+        padding: 15px;
+    }
+
+    .modal-left img {
+        max-width: 180px; /* Smaller on mobile */
+    }
+
+    .modal-right {
+        padding: 15px;
+    }
+}

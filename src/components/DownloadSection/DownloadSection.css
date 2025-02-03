@@ -65,7 +65,8 @@
 }
 
 .store-button img {
-    width: 120px;
+    margin-top: 20px;
+    width: 80px;
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
