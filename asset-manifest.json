@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/RASPBerry-Website-Final/static/css/main.f496e10f.css",
+    "main.js": "/RASPBerry-Website-Final/static/js/main.b492ec62.js",
+    "static/media/Pawan.jpg": "/RASPBerry-Website-Final/static/media/Pawan.0865df286ad690e51ec8.jpg",
+    "static/media/Pansilu.jpg": "/RASPBerry-Website-Final/static/media/Pansilu.4a412ab6bfcfe3c9033b.jpg",
+    "static/media/shevon.jpg": "/RASPBerry-Website-Final/static/media/shevon.a1a51a899c0c2ca82725.jpg",
+    "static/media/Bilal.jpg": "/RASPBerry-Website-Final/static/media/Bilal.33e3ae22ec21afda4522.jpg",
+    "static/media/insta.png": "/RASPBerry-Website-Final/static/media/insta.c75c7c8c0bfb35a96a28.png",
+    "static/media/Raaidh.jpg": "/RASPBerry-Website-Final/static/media/Raaidh.e647ef54314fcbc4e5ad.jpg",
+    "static/media/amra.jpg": "/RASPBerry-Website-Final/static/media/amra.a77c4199707c590af12e.jpg",
+    "static/media/twitter3.png": "/RASPBerry-Website-Final/static/media/twitter3.b7ff4193a9e5f731f8ae.png",
+    "static/media/R_Robot.png": "/RASPBerry-Website-Final/static/media/R_Robot.0310515518511173b16d.png",
+    "static/media/GooglePlay.png": "/RASPBerry-Website-Final/static/media/GooglePlay.ba004008e7d0a357146a.png",
+    "static/media/AppleStore.png": "/RASPBerry-Website-Final/static/media/AppleStore.2be29c88bfd54927d5e2.png",
+    "static/media/team.svg": "/RASPBerry-Website-Final/static/media/team.1bb176fec1a64d83ec22c61985bc0eda.svg",
+    "index.html": "/RASPBerry-Website-Final/index.html",
+    "main.f496e10f.css.map": "/RASPBerry-Website-Final/static/css/main.f496e10f.css.map",
+    "main.b492ec62.js.map": "/RASPBerry-Website-Final/static/js/main.b492ec62.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f496e10f.css",
+    "static/js/main.b492ec62.js"
+  ]
+}
