@@ -1,5 +1,4 @@
 import React from "react";
-import "../App.css"
 import ScrollGlow from "../components/ScrollGlow/ScrollGlow";
 import HeroSection from "../components/HeroSection/HeroSection";
 import AboutSection from "../components/AboutSection/AboutSection";
