@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Define shadow filter with better contrast -->
+  <defs>
+    <filter id="faded-shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur"/>
+      <feOffset in="blur" dx="0" dy="10" result="offsetBlur"/>
+      <feFlood flood-color="rgba(0, 128, 128, 0.9)" result="color"/>
+      <feComposite in2="offsetBlur" operator="in" result="shadow"/>
+      <feComposite in="SourceAlpha" in2="shadow" operator="over" result="shadowEffect"/>
+    </filter>
+  </defs>
+
+  <!-- Horizontal straight lines with larger gaps -->
+  <path d="M20,0 R180,0" fill="none" stroke="#008080" stroke-width="2" filter="url(#faded-shadow)" />
+  <path d="M20,40 R180,40" fill="none" stroke="#008080" stroke-width="2" filter="url(#faded-shadow)" />
+  <path d="M20,80 180,80" fill="none" stroke="#008080" stroke-width="2" filter="url(#faded-shadow)" />
+  <path d="M20,120 L180,120" fill="none" stroke="#008080" stroke-width="2" filter="url(#faded-shadow)" />
+  <path d="M20,160 L180,160" fill="none" stroke="#008080" stroke-width="2" filter="url(#faded-shadow)" />
+</svg>

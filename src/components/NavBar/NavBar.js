@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom"; // ✅ Use NavLink instead of Link
+import { NavLink } from "react-router-dom"; 
 import "./NavBar.css";
 import logo from '../../Media/R_Robot.png';
 
