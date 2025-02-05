@@ -167,7 +167,7 @@ footer a:hover {
 
     /* Line separator between items */
     .nav-links li + li {
-        border-top: 2px solid rgba(255, 255, 255, 0.2);
+        border-top: 2px solid rgb(197, 179, 179);
     }
 
     /* Burger icon */
