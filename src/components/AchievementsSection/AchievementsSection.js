@@ -4,28 +4,16 @@ import "./AchievementsSection.css";
 
 const achievements = [
   {
-    title: "1st Place - AI Innovation Challenge",
+    title: "Highest Mark - Coursework 1",
     description:
-      "Team RASPBerry secured first place in the prestigious AI Innovation Challenge, competing against 50+ teams worldwide.",
-    year: "2023",
-  },
-  {
-    title: "Best Research Paper Award",
-    description:
-      "Published an award-winning paper on AI-driven automation in IEEE, recognized as a top research contribution in 2022.",
-    year: "2022",
-  },
-  {
-    title: "Top 3 Finalist - Global Hackathon",
-    description:
-      "Developed an AI-powered chatbot for mental health support, earning a top 3 finalist spot in a global hackathon.",
+      "Recognized as one of the best SDGP project at IIT for the year 24/25",
     year: "2024",
   },
   {
-    title: "Community Impact Award",
-    description:
-      "Our AI project positively impacted over 10,000 users, leading to recognition for significant contributions to society.",
-    year: "2023",
+    title: "Pending",
+  },
+  {
+    title: "Pending",
   },
 ];
 

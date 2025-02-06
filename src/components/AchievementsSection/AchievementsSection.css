@@ -1,111 +1,147 @@
-/* Background and Layout */
+/* General Styling */
 .achievements-section {
-    color: white;
-    padding: 100px 20px;
-    text-align: center;
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  color: white;
+  padding: 10vh 5vw;
+  text-align: center;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Title */
+.achievements-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+/* Description */
+.achievements-description {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  max-width: 800px;
+  margin-bottom: 3rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Achievements Grid */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  padding: 2rem;
+}
+
+/* Achievement Card */
+.achievement-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+/* Card Title */
+.achievement-card h2 {
+  font-size: clamp(1.3rem, 2vw, 1.5rem);
+  color: #00bcd4;
+  margin-bottom: 0.5rem;
+}
+
+/* Card Text */
+.achievement-card p {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.85);
+  flex-grow: 1;
+}
+
+/* Year Badge */
+.achievement-year {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: #00bcd4;
+  color: #1a1a2e;
+  font-weight: bold;
+  padding: 0.4rem 1rem;
+  border-radius: 10px;
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
+}
+
+/* Hover Effects */
+.achievement-card:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+  .achievements-section {
+    padding: 8vh 4vw;
   }
-  
-  /* Title */
-  .achievements-title {
-    font-size: 3rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    color: #ffffff;
-  }
-  
-  /* Description */
-  .achievements-description {
-    font-size: 1.4rem;
-    max-width: 800px;
-    margin-bottom: 40px;
-    color: rgba(255, 255, 255, 0.8);
-  }
-  
-  /* Achievements Grid */
+
   .achievements-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    width: 100%;
-    padding: 20px;
+    gap: 1.5rem;
   }
-  
-  /* Achievement Card */
+
   .achievement-card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 15px;
-    transition: transform 0.3s ease, background 0.3s ease;
-    text-align: left;
-    position: relative;
-    overflow: hidden;
+    padding: 1.8rem;
   }
-  
-  .achievement-card h2 {
-    font-size: 1.5rem;
-    color: #00bcd4;
-    margin-bottom: 10px;
+}
+
+/* Small Screens (Phones) */
+@media (max-width: 768px) {
+  .achievements-section {
+    padding: 10vh 5vw;
   }
-  
-  .achievement-card p {
+
+  .achievements-title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+  }
+
+  .achievements-description {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .achievement-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+  .achievements-section {
+    padding: 12vh 6vw;
+  }
+
+  .achievements-title {
+    font-size: 2rem;
+  }
+
+  .achievements-description {
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 15px;
   }
-  
-  /* Year Badge */
-  .achievement-year {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: #00bcd4;
-    color: #1a1a2e;
-    font-weight: bold;
-    padding: 5px 12px;
-    border-radius: 10px;
-    font-size: 0.9rem;
+
+  .achievement-card {
+    padding: 1.2rem;
   }
-  
-  /* Hover Effects */
-  .achievement-card:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-5px);
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .achievements-title {
-      font-size: 2.5rem;
-    }
-  
-    .achievements-description {
-      font-size: 1.2rem;
-    }
-  
-    .achievement-card {
-      padding: 25px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .achievements-title {
-      font-size: 2rem;
-    }
-  
-    .achievements-description {
-      font-size: 1rem;
-    }
-  
-    .achievement-card {
-      padding: 20px;
-    }
-  }
-  
+}

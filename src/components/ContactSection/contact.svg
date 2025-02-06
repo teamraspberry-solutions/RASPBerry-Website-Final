@@ -1,0 +1,22 @@
+<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="spiralGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#004d4d" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#008080" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#66b2b2" stop-opacity="0.4" />
+    </linearGradient>
+  </defs>
+
+  <!-- Non-overlapping Subtle Scattered Curves Design -->
+  <path fill="none" stroke="url(#spiralGrad)" stroke-width="2" stroke-opacity="0.6"
+    d="M100,100 Q300,150 500,100 T700,150" />
+
+  <path fill="none" stroke="url(#spiralGrad)" stroke-width="2" stroke-opacity="0.6"
+    d="M200,300 Q400,350 600,400 T750,450" />
+  
+  <path fill="none" stroke="url(#spiralGrad)" stroke-width="2" stroke-opacity="0.6"
+    d="M150,500 Q300,450 450,500 T600,550" />
+  
+  <path fill="none" stroke="url(#spiralGrad)" stroke-width="2" stroke-opacity="0.6"
+    d="M50,200 Q250,150 450,200 T600,250" />
+</svg> -->

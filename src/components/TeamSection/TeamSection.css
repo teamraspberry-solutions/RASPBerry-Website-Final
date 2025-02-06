@@ -7,8 +7,8 @@
 }
 
 body {
-    background: #000; /* Dark background */
-    color: #fff; /* White text */
+    background: #000;
+    color: #fff; 
 }
 
 /* Team Section */
@@ -34,7 +34,6 @@ body {
     filter: brightness(0) saturate(100%) invert(20%) sepia(50%) saturate(500%) hue-rotate(150deg);
 }
 
-
 /* Section Title */
 .team-title {
     font-size: 36px;
@@ -50,23 +49,23 @@ body {
 .team-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px; /* Reduced spacing */
+    gap: 30px; 
     justify-items: center;
     margin-top: 40px;
 }
 
 /* Team Card */
 .team-card {
-    background: #111; /* Blackish Card */
+    background: #111; 
     border-radius: 12px;
     padding: 40px;
-    box-shadow: 0 5px 15px rgba(0, 128, 128, 0.7); /* Adjusted glow */
+    box-shadow: 0 5px 15px rgba(0, 128, 128, 0.7); 
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     max-width: 300px;
     width: 100%;
     position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Thin line for separation */
+    border: 1px solid rgba(255, 255, 255, 0.1); 
 }
 
 .team-card:hover {
@@ -92,7 +91,7 @@ body {
 
 .team-card-role {
     font-size: 16px;
-    color: #ff6f61; /* Coral Color */
+    color: #ff6f61; 
     margin-bottom: 10px;
 }
 
@@ -103,8 +102,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
-    backdrop-filter: blur(5px); /* Subtle blur effect */
+    background: rgba(0, 0, 0, 0.6); 
+    backdrop-filter: blur(5px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,7 +112,6 @@ body {
     z-index: 1;
     transition: opacity 0.1s ease, visibility 0.1s ease;
 }
-
 
 /* Show Modal */
 .modal-overlay.active {
@@ -131,8 +129,7 @@ body {
     text-align: center;
     position: relative;
     box-shadow: 0 0 20px rgba(0, 128, 128, 0.7);
-    
-    transform: scale(0.8); /* Initial size */
+    transform: scale(0.8);
     opacity: 0;
     transition: transform 0.1s ease-out, opacity 0.1s ease-out;
 }
@@ -165,10 +162,22 @@ body {
 
 .modal-left img {
     width: 100%;
-    max-width: 250px; /* Limited image size */
+    max-width: 250px;
     height: auto;
     border-radius: 10px;
 }
+
+.social-icon {
+    width: 50px;  /* Adjust the size of the icons */
+    height: 50px;
+    margin-right: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.1);  /* Slightly enlarge on hover */
+  }
+  
 
 /* Modal Right - Details */
 .modal-right {
@@ -198,10 +207,8 @@ body {
     text-align: center;
     color: #fff;
     opacity: 0;
-    animation: fadeInText 0.1s ease-out 0.1s forwards; /* Faster appearance */
+    animation: fadeInText 0.1s ease-out 0.1s forwards; 
 }
-
-
 
 /* Modal Name */
 .modal-name {
@@ -251,25 +258,71 @@ body {
 }
 
 /* Responsive Styles */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     .team-cards {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        gap: 20px; 
     }
 
     .modal-content {
-        flex-direction: column;
-    }
-
-    .modal-left {
-        padding: 15px;
+        width: 80%; 
+        padding: 20px;
     }
 
     .modal-left img {
-        max-width: 180px; /* Smaller on mobile */
+        max-width: 200px; 
     }
 
     .modal-right {
         padding: 15px;
+    }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .team-cards {
+        grid-template-columns: 1fr; 
+        gap: 15px;
+    }
+
+    .team-title {
+        font-size: 28px;
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .modal-left img {
+        max-width: 150px; 
+    }
+
+    .modal-right {
+        padding: 10px;
+    }
+}
+
+/* Extra Small Mobile Styles */
+@media screen and (max-width: 480px) {
+    .team-title {
+        font-size: 24px; 
+    }
+
+    .team-card {
+        padding: 30px; 
+    }
+
+    .modal-content {
+        width: 100%; 
+        padding: 10px;
+    }
+
+    .modal-left img {
+        max-width: 120px; 
+    }
+
+    .modal-right {
+        padding: 8px;
     }
 }

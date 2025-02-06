@@ -1,40 +1,50 @@
-import React, { useEffect, useState } from 'react';
-import './AboutSection.css';
+import React, { useEffect, useState } from "react";
+import "./AboutSection.css";
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const aboutSection = document.querySelector('.about');
-      const aboutSectionPosition = aboutSection.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
+    const aboutSection = document.querySelector(".about");
 
-      if (aboutSectionPosition <= windowHeight * 0.75) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsVisible(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.5 } // Trigger when 50% of the section is visible
+    );
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    if (aboutSection) observer.observe(aboutSection);
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <section className={`about ${isVisible ? 'fade-in-up' : ''}`}>
+    <section className={`about ${isVisible ? "fade-in-up" : ""}`}>
       <div className="about-content">
         <h1>About Us</h1>
-        <p>"Welcome to Project Kyan! We're passionate about creating innovative solutions that enhance learning and productivity. Our smart desk robot is a unique blend of functionality and intelligence.
-          <br></br><br></br>
-                Everyday Use: Experience a more organized and efficient workspace. Our robot can help with tasks like scheduling reminders, managing your to-do lists, and even controlling smart home devices.
-                <br></br><br></br>
-
-                Educational Assistance: Designed with students in mind, our robot offers a range of features to improve learning outcomes. It can provide personalized learning plans, offer interactive study sessions, and help you stay focused and motivated.
-                
-                We believe that technology should empower and inspire. Our mission is to create a smarter, more enjoyable learning and work experience for everyone."
+        <p>
+          "Welcome to Project Kyan! We're passionate about creating innovative
+          solutions that enhance learning and productivity. Our smart desk robot
+          is a unique blend of functionality and intelligence.
+          <br />
+          <br />
+          <strong>Everyday Use:</strong> Experience a more organized and efficient
+          workspace. Our robot helps with scheduling reminders, managing to-do
+          lists, and even controlling smart home devices.
+          <br />
+          <br />
+          <strong>Educational Assistance:</strong> Designed for students, it
+          provides personalized learning plans, interactive study sessions, and
+          helps maintain focus and motivation.
+          <br />
+          <br />
+          We believe technology should empower and inspire. Our mission is to
+          create a smarter, more enjoyable learning and work experience for
+          everyone."
         </p>
-        </div>
+      </div>
     </section>
   );
 };

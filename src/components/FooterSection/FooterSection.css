@@ -4,14 +4,14 @@
     color: white;
     padding: 4rem 0rem;
     font-family: 'Roboto', sans-serif;
-    text-align: center; /* Center all text */
+    text-align: center;
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
     position: relative;
 }
 
 .footer-container {
     display: flex;
-    justify-content: center; /* Center the content */
+    justify-content: center; 
     align-items: flex-start;
     gap: 15rem;
     flex-wrap: wrap;
@@ -42,14 +42,14 @@
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
-    justify-content: center; /* Center the links */
+    justify-content: center; 
     margin-top: 1rem;
 }
 
 .links-column {
     max-width: 250px;
     margin-right: 2rem;
-    text-align: center; /* Center text in links column */
+    text-align: center; 
 }
 
 .links-column h4 {
@@ -84,7 +84,7 @@
     max-width: 200px;
     margin-left: 1.5rem;
     display: flex;
-    flex-direction: column; /* Stack the heading and icons vertically */
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
 }
@@ -98,9 +98,9 @@
 
 .social-icons {
     display: flex;
-    justify-content: center; /* Center the social icons */
+    justify-content: center; 
     align-items: center;
-    gap: 15px; /* Adjust gap between social icons */
+    gap: 15px; 
 }
 
 .social-icons a {
@@ -113,21 +113,21 @@
 
 /* Social Icons Styling */
 .social-icons img {
-    height: 40px;  /* Adjust the height of the icons */
-    width: 40px;   /* Ensure the width is the same as the height */
-    object-fit: contain; /* Ensures icons don't get stretched or distorted */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for scale and shadow */
+    height: 40px; 
+    width: 40px;   
+    object-fit: contain; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 /* Hover Effects for Social Icons */
 .social-icons a:hover img {
-    transform: scale(1.1); /* Increase icon size slightly */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+    transform: scale(1.1); 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); 
 }
 
 .social-icons a:hover {
-    color: #4db8b8; /* Change color on hover */
-    transform: translateY(-5px); /* Slight vertical movement */
+    color: #4db8b8; 
+    transform: translateY(-5px); 
 }
 
 /* Footer Text */
@@ -195,5 +195,117 @@
 
     .links-column h4 {
         font-size: 1rem;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .footer-brand h2 {
+        font-size: 2.5rem;
+    }
+
+    .footer-brand p {
+        font-size: 1.1rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding-left: 30px;
+    }
+
+    .footer-social {
+        margin-top: 1.5rem;
+        padding-right: 20px;
+    }
+
+    .footer-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .footer {
+        padding: 3rem 0;
+    }
+
+    .footer-brand h2 {
+        font-size: 2.2rem;
+    }
+
+    .footer-brand p {
+        font-size: 1rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .links-column h4 {
+        font-size: 1.1rem;
+    }
+
+    .links-column ul {
+        padding: 0;
+    }
+
+    .links-column a {
+        font-size: 1rem;
+    }
+
+    .footer-social {
+        align-items: center;
+        text-align: center;
+    }
+
+    .social-icons {
+        gap: 10px;
+    }
+
+    .social-icons img {
+        height: 35px;
+        width: 35px;
+    }
+
+    .footer-text {
+        font-size: 0.85rem;
+    }
+}
+
+/* Smaller Phones */
+@media (max-width: 480px) {
+    .footer-brand h2 {
+        font-size: 2rem;
+    }
+
+    .footer-brand p {
+        font-size: 0.95rem;
+    }
+
+    .footer-text {
+        font-size: 0.8rem;
+    }
+
+    .social-icons img {
+        height: 30px;
+        width: 30px;
+    }
+
+    .links-column h4 {
+        font-size: 1rem;
+    }
+
+    .links-column a {
+        font-size: 0.95rem;
     }
 }

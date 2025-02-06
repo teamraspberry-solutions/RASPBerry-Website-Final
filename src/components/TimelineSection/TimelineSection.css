@@ -1,35 +1,27 @@
-/* Container for the timeline section */
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+/* Timeline Container */
 .timeline-container {
   background: #000;
   color: #fff;
   padding: 150px 20px;
   text-align: center;
   position: relative;
-  background-size: cover;
   background-position: center;
   overflow: hidden;
+  background-image: url('abstract.svg');
 }
-
-.gallery-slider {
-  width: 70%;
-  max-width: 100%;
-  margin: 20px auto;
-  overflow: hidden; /* Ensure children respect border radius */
-  border-radius: 20px; /* Match the image border radius */
-}
-
-
-.slider-image {
-  width: 200px;
-  height: 230px;
-  object-fit: cover; /* Ensure it fills the space properly */
-  display: block;
-  margin: 0 auto;
-  opacity: 80%;
-  border-radius: 20px !important; /* Ensures the rounded corners apply */
-  overflow: hidden; /* Ensures no parts of the image overflow */
-}
-
 
 /* Title */
 .timeline-title {
@@ -40,7 +32,7 @@
   letter-spacing: 2px;
 }
 
-/* Timeline */
+/* Timeline (Desktop Layout) */
 .timeline {
   position: relative;
   max-width: 1000px;
@@ -48,7 +40,7 @@
   height: 100%;
 }
 
-/* The Dimmed Background Line */
+/* Background Line (Desktop) */
 .timeline-line-background {
   position: absolute;
   top: 0;
@@ -56,11 +48,11 @@
   width: 6px;
   background: rgba(0, 166, 166, 0.3);
   transform: translateX(-50%);
-  height: 140%;
+  height: 103%;
   z-index: 1;
 }
 
-/* The Glowing Loader Line */
+/* Loader Line (Desktop) */
 .timeline-line-loader {
   position: absolute;
   top: 0;
@@ -74,7 +66,7 @@
   transition: height 0.6s ease-out;
 }
 
-/* Timeline Event */
+/* Timeline Event (Desktop Layout) */
 .timeline-event {
   position: relative;
   width: 50%;
@@ -84,6 +76,7 @@
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
+/* Left & Right Positioning for Desktop */
 .timeline-event.left {
   left: 0;
   text-align: right;
@@ -94,6 +87,7 @@
   text-align: left;
 }
 
+/* Show Event When Visible */
 .timeline-event.visible {
   opacity: 1;
   transform: translateY(0);
@@ -125,30 +119,53 @@
   color: #ddd;
 }
 
-/* Timeline Dot */
+/* Gallery Slider */
+.gallery-slider {
+  width: 70%;
+  max-width: 100%;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.slider-image {
+  width: 200px;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  opacity: 80%;
+  border-radius: 20px !important;
+  overflow: hidden;
+  pointer-events: none;
+
+}
+
+/* Timeline Dot (Desktop Layout) */
 .timeline-dot {
   position: absolute;
-  top: 50%;
-  left: 493px;
   width: 14px;
   height: 14px;
   background: #00a6a6;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 0 10px rgba(0, 166, 166, 0.5);
+  z-index: 3;
 }
 
-.timeline-event.right .timeline-dot {
-  left: calc(0% - 6.8px);
-}
-
-.timeline-event.left .timeline-dot,
-.timeline-event.right .timeline-dot {
+/* Dot for Left Events (Desktop) */
+.timeline-event.left .timeline-dot {
+  right: -7px;
   top: 50%;
-  transition: top 0.3s ease-out;
 }
 
-/* Pulse animation for the dots */
+/* Dot for Right Events (Desktop) */
+.timeline-event.right .timeline-dot {
+  left: -7px;
+  top: 50%;
+}
+
+/* Pulse Animation for Dots */
 .pulse {
   animation: pulse 1.5s infinite;
 }
@@ -159,7 +176,7 @@
   100% { transform: scale(1); }
 }
 
-/* Fade-in animation for the events */
+/* Fade-in Animation for Events */
 .fade-in {
   animation: fadeIn 0.6s ease-in-out forwards;
 }
@@ -169,10 +186,148 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive adjustments */
+/* RESPONSIVE STYLES FOR SMALLER DEVICES (max-width: 768px) */
 @media (max-width: 768px) {
-  .timeline-line-loader { width: 4px; }
-  .timeline-event.left, .timeline-event.right { width: 100%; }
-  .timeline-heading { font-size: 1.5rem; }
-  .timeline-text { font-size: 1rem; }
+  .timeline {
+    max-width: 90%;
+    margin: 0 auto;
+    padding-left: 100px;  
+    position: relative;
+  }
+  
+  /* Move the vertical timeline line to the left */
+  .timeline-line-background,
+  .timeline-line-loader {
+    top: 15px;
+    left: 40px;            
+    transform: none;       
+    width: 4px;            
+    height: 100%;          
+  }
+  
+  /* Stack events in one column */
+  .timeline-event {
+    width: 90%;
+    padding: 10px 0;
+    left: 0;               
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  .timeline-event.left {
+    left: 0;
+    text-align: right;
+  }
+  
+  .timeline-event.right {
+    left: 0;
+    text-align: left;
+  }
+
+  /* Override left/right classes so all events align uniformly */
+  .timeline-event.left,
+  .timeline-event.right {
+    text-align: center;
+  }
+  
+  /* Offset event content so it does not touch the vertical line */
+  .timeline-content {
+    margin-left: 20px;    
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  /* Position the timeline dot in the middle of the vertical line */
+  .timeline-event.left .timeline-dot {
+    left: -65px;
+    transform: translate(-50%, -50%);
+  }
+
+  .timeline-event.right .timeline-dot{
+    left: -65px;
+    transform: translate(-50%, -50%);
+  }
+
+  .timeline-dot {
+    left: -65px;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Adjust the gallery slider and images for smaller screens */
+  .gallery-slider {
+    width: 90%;
+    margin: 15px auto;
+  }
+  
+  .slider-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* RESPONSIVE STYLES FOR VERY SMALL DEVICES (max-width: 480px) */
+@media (max-width: 480px) {
+  .timeline-container {
+    padding: 100px 10px;
+  }
+  
+  .timeline-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  .timeline-event.left .timeline-dot {
+    left: -35px;
+    transform: translate(-50%, -50%);
+  }
+
+  .timeline-event.right .timeline-dot{
+    left: -35px;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Further reduce left padding for the timeline */
+  .timeline {
+    padding-left: 60px;
+  }
+  
+  /* Move the vertical line even closer to the left edge */
+  .timeline-line-background,
+  .timeline-line-loader {
+    left: 30px;
+    width: 3px;
+    height: 100%;
+  }
+  
+  /* Ensure events take full width and adjust spacing */
+  .timeline-event {
+    width: 100%;
+    padding: 8px 0;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  /* Reduce event content offset */
+  .timeline-content {
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 0.8rem;
+  }
+  
+  /* Position the timeline dot further to the left */
+  .timeline-dot {
+    left: -45px;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Adjust gallery slider and images */
+  .gallery-slider {
+    width: 95%;
+    margin: 10px auto;
+  }
+  
+  .slider-image {
+    width: 100%;
+    height: auto;
+  }
 }

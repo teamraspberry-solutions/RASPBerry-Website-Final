@@ -1,26 +1,27 @@
 /* General Styles for About Section */
 .about {
   opacity: 0;
-  transform: translateY(50px);
-  scale: 0.95; /* Slightly smaller to make it pop */
-  transition: opacity 1s ease-out, transform 1s ease-out, scale 0.8s ease-out;
-  padding: 20px 5px;
-  background-color: #000; /* Dark background */
+  transform: translateY(50px) scale(0.95);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  padding: 5vw 5vw;
+  background-color: #000;
   position: relative;
   overflow: hidden;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
 }
 
-/* When About section becomes visible */
+/* Visible State */
 .about.fade-in-up {
   opacity: 1;
-  transform: translateY(0);
-  scale: 1;
+  transform: translateY(0) scale(1);
 }
 
 /* Subtle Background Animation */
-.about:before {
-  content: '';
+.about::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -31,42 +32,41 @@
   transition: opacity 1s ease-in-out;
 }
 
-.about.fade-in-up:before {
+.about.fade-in-up::before {
   opacity: 1;
 }
 
-/* Main Content Styling */
+/* About Content */
 .about-content {
   position: relative;
   z-index: 1;
   color: white;
   text-align: center;
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 75ch;
 }
 
-/* About Section Heading Animation */
+/* Heading Styling */
 h1 {
-  font-size: 3.5rem;
+  font-size: clamp(1.5rem, 4vw, 4rem);
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  background: linear-gradient(to right, #004d4d, #008080, #66b2b2); /* Same gradient as Hero */
+  background: linear-gradient(to right, #004d4d, #008080, #66b2b2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: fadeInHeader 1.5s ease-out forwards, bounceIn 1s ease-out 1.2s; /* Add bounce effect */
+  animation: fadeInHeader 1.5s ease-out forwards, bounceIn 1s ease-out 1.2s;
 }
 
 /* Paragraph Styling */
 p {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.8;
-  max-width: 1500px;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  max-width: 60ch;
   margin: 0 auto;
   opacity: 0;
-  animation: fadeInText 1.2s ease-out 1.5s forwards; /* Add delay for paragraph */
+  animation: fadeInText 1.2s ease-out 1.5s forwards;
 }
 
 /* Heading Fade-In and Bounce Effect */
@@ -84,10 +84,10 @@ p {
 /* Bounce Effect for Header */
 @keyframes bounceIn {
   0% {
-    transform: translateY(-30px);
+    transform: translateY(-15px);
   }
   50% {
-    transform: translateY(10px);
+    transform: translateY(5px);
   }
   100% {
     transform: translateY(0);
@@ -98,7 +98,7 @@ p {
 @keyframes fadeInText {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   100% {
     opacity: 1;
@@ -106,23 +106,43 @@ p {
   }
 }
 
-/* Responsive Styling */
-@media (max-width: 768px) {
-  .about h1 {
-    font-size: 2.5rem;
-  }
+/* RESPONSIVE DESIGN */
 
-  .about p {
-    font-size: 1rem;
+/* Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+  .about {
+    padding: 8vw 4vw;
   }
 }
 
+/* Small Screens (Phones) */
+@media (max-width: 768px) {
+  .about {
+    padding: 10vw 5vw;
+    min-height: auto;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+  }
+
+  p {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    line-height: 1.6;
+  }
+}
+
+/* Extra Small Screens */
 @media (max-width: 480px) {
-  .about h1 {
+  .about {
+    padding: 12vw 6vw;
+  }
+
+  h1 {
     font-size: 2rem;
   }
 
-  .about p {
-    font-size: 0.9rem;
+  p {
+    font-size: 1rem;
   }
 }
