@@ -18,7 +18,7 @@ const ScrollGlow = () => {
       const aboutSection = document.getElementById("about-section");
       if (aboutSection) {
         const aboutOffset = aboutSection.offsetTop;
-        setIsVisible(scrollTop > aboutOffset - 200); // Show when scrolled past Hero section
+        setIsVisible(scrollTop > aboutOffset - 200); 
       }
     };
 

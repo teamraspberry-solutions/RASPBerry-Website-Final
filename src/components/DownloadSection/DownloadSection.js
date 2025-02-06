@@ -6,7 +6,7 @@ import download2 from "./images/AppleStore.png";
 const DownloadSection = () => {
   return (
     <section className="download-section">
-      <div className="spiral-background"></div> {/* SVG Background */}
+      <div className="spiral-background"></div> 
       
       <div className="content-wrapper">
         {/* Text Content */}

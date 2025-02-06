@@ -1,0 +1,244 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+  height: 100vh; 
+}
+
+/* Contact Section with SVG background */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+  background-image: url('./contact.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; 
+  position: relative;
+}
+
+
+/* Ensure the content sits over the SVG */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  max-width: 1200px;
+  gap: 45px;
+  z-index: 2;
+  animation: slideIn 1.5s ease-in-out;
+  flex-wrap: wrap;
+}
+
+/* Both containers have equal width */
+.contact-info,
+.contact-form {
+  flex: 1 1 48%;
+  padding: 20px;
+  background-color: rgba(30, 30, 30, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+
+/* Gradient color for headings */
+.contact-info h2,
+.contact-form h3 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  background: linear-gradient(to right, #004d4d, #008080, #66b2b2);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+}
+
+/* Contact Info Text */
+.contact-info p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #bbb;
+  text-align: center;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: transform 0.3s ease;
+}
+
+.contact-item i {
+  font-size: 2rem;
+  color: #00d4d4;
+  transition: color 0.3s ease;
+}
+
+.contact-item p {
+  font-size: 1.1rem;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for contact info text and icons */
+.contact-item:hover i {
+  color: #ff6347;
+  transform: scale(1.1);
+}
+
+.contact-item:hover p {
+  color: #ff6347;
+  background: linear-gradient(to right, #004d4d, #008080, #66b2b2);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Contact Form */
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  border: 1px solid #444;
+  background: #333;
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00d4d4;
+  background-color: #222;
+}
+
+/* Submit Button Styling */
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to right, #004d4d, #008080, #66b2b2);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.submit-button:hover {
+  background: linear-gradient(to right, #004d4d, #008080, #66b2b2);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.form-status {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #fffbf0;
+  opacity: 0.8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Parallax effect for background */
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -1;
+  animation: parallaxEffect 12s ease infinite;
+}
+
+@keyframes parallaxEffect {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .contact-container {
+    padding-top: 130px;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-item i {
+    font-size: 1.5rem;
+  }
+
+  .submit-button {
+    font-size: 1.1rem;
+  }
+}

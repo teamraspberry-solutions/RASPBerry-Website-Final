@@ -21,7 +21,7 @@
 /* Feature Grid */
 .feature-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 cards per row for laptops */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 20px;
     justify-content: center;
     padding: 10px;
@@ -34,11 +34,11 @@
     background: rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     padding: 45px;
-    height: 250px; /* Ensures all cards have the same height */
+    height: 250px; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between; /* Keeps text & icons aligned */
+    justify-content: space-between; 
     text-align: center;
     backdrop-filter: blur(12px);
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
@@ -97,11 +97,11 @@
     }
 
     .feature-list {
-        grid-template-columns: repeat(2, 1fr); /* 2 cards per row for tablets */
+        grid-template-columns: repeat(2, 1fr); 
     }
 
     .feature-card {
-        height: 320px; /* Adjust height for smaller screens */
+        height: 320px; 
     }
 
     .feature-card h3 {
@@ -120,7 +120,7 @@
     }
 
     .feature-list {
-        grid-template-columns: 1fr; /* 1 card per row for mobile */
+        grid-template-columns: 1fr; 
     }
 
     .feature-card {
