@@ -260,8 +260,16 @@ body {
   }
   
   .slider-image {
-    width: 100%;
-    height: auto;
+    width: 200px;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    opacity: 80%;
+    border-radius: 20px !important;
+    overflow: hidden;
+    pointer-events: none;
+  
   }
 }
 
@@ -327,7 +335,15 @@ body {
   }
   
   .slider-image {
-    width: 100%;
-    height: auto;
+    width: 200px;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    opacity: 80%;
+    border-radius: 20px !important;
+    overflow: hidden;
+    pointer-events: none;
+  
   }
 }

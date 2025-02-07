@@ -80,7 +80,7 @@ body {
 }
 
 .contact-item {
-  display: flex;
+  display: relative;
   align-items: center;
   gap: 15px;
   transition: transform 0.3s ease;

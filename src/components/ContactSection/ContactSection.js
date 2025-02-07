@@ -58,15 +58,14 @@ const ContactSection = () => {
           <p>If you have any questions, feel free to reach out to us!</p>
           <div className="contact-methods">
             <div className="contact-item">
-              <i className="fas fa-phone-alt"></i>
               <p>(+94) 77 378 4996</p>
+              <p>(+94) 77 220 5158</p>
+              <p>(+94) 77 280 5262</p>
             </div>
             <div className="contact-item">
-              <i className="fas fa-envelope"></i>
               <p>teamraspberry6@gmail.com</p>
             </div>
             <div className="contact-item">
-              <i className="fas fa-map-marker-alt"></i>
               <p>Colombo, Sri Lanka</p>
             </div>
           </div>

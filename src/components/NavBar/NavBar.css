@@ -43,14 +43,18 @@ nav {
 
 /* Nav links */
 .nav-links {
-    display: flex;
+    display:flex;
+    align-items: center;
+    justify-content: right;
     width: 60%;
     transition: transform 0.3s ease;
+
 }
 
 .nav-links li {
     list-style: none;
-    padding-left: 130px;
+    padding: 5%;
+    /* align-items: flex-end; */
     position: relative;
 }
 
@@ -86,12 +90,17 @@ nav {
     height: 3px;
     background-color: #008080;
     margin: 5px;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .burger:hover div {
     background-color: #fff;
 }
+
+.burger.active{
+    transform: rotate(90deg);
+}
+
 
 /* Main content styling */
 main {
@@ -175,23 +184,33 @@ footer a:hover {
         display: block;
     }
 
-    /* Toggle animation for burger icon */
-    .toggle .line1 {
-        transform: rotate(-45deg) translate(-5px, 6px);
+    /* Default state (horizontal lines) */
+    .burger .line {
+        transform: rotate(0deg);
     }
 
-    .toggle .line2 {
-        opacity: 0;
+    /* When burger is active, rotate all three lines to make them vertical */
+    .burger-open .line:nth-child(1) {
+        transform: rotate(90deg) translateY(7px) translateX(8px);
     }
 
-    .toggle .line3 {
-        transform: rotate(45deg) translate(-5px, -6px);
+    .burger-open .line:nth-child(2) {
+        transform: rotate(90deg);
     }
 
-    /* When the slider is active */
+    .burger-open .line:nth-child(3) {
+        transform: rotate(90deg) translateY(-7px) translateX(-8px);
+    }
+
+    /* Nav links sliding animation */
+    .nav-links {
+        transform: translateX(100%);
+    }
+
     .nav-active {
-        transform: translateX(0%);
+        transform: translateX(0);
     }
+
 }
 
 /* Fade-in animation for nav links */

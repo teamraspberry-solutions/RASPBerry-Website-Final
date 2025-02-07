@@ -1,7 +1,7 @@
 /* Hero Section Styling */
 .hero {
   position: relative;
-  height: 100vh; /* Ensure it's full screen */
+  height: 85vh; /* Ensure it's full screen */
   background-size: cover;
   background-position: center;
   display: flex;
@@ -49,7 +49,7 @@
 
 /* Main Heading Animation */
 .overlay h1 {
-  font-size: 4rem;
+  font-size: 4.5rem;
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -138,15 +138,3 @@
   }
 }
 
-/* Large screens (optional) */
-@media (min-width: 1200px) {
-  .hero {
-    height: 100vh; 
-  }
-  .overlay h1 {
-    font-size: 5rem; 
-  }
-  .overlay p {
-    font-size: 1.8rem;
-  }
-}

@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 import logo from '../../Media/R_Robot.png';
 
-
 const NavBar = () => {
   const [isNavActive, setIsNavActive] = useState(false);
 
@@ -11,32 +10,37 @@ const NavBar = () => {
     setIsNavActive(!isNavActive);
   };
 
-  console.log(logo); 
 
+  const closeNav = () => {
+    setIsNavActive(false);
+    window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top on link click
+  };
 
   return (
     <nav>
       <div className="logo">
+        <a href="/">
         <img src={logo} alt="Logo" />
+        </a>
       </div>
       <ul className={`nav-links ${isNavActive ? "nav-active" : ""}`}>
         <li>
-          <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : ""}>Home</NavLink>
+          <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : ""} onClick={closeNav}>Home</NavLink>
         </li>
         <li>
-          <NavLink to="/timeline" className={({ isActive }) => isActive ? "active-link" : ""}>Timeline</NavLink>
+          <NavLink to="/timeline" className={({ isActive }) => isActive ? "active-link" : ""} onClick={closeNav}>Timeline</NavLink>
         </li>
         <li>
-          <NavLink to="/team" className={({ isActive }) => isActive ? "active-link" : ""}>About Us</NavLink>
+          <NavLink to="/team" className={({ isActive }) => isActive ? "active-link" : ""} onClick={closeNav}>About Us</NavLink>
         </li>
         <li>
-          <NavLink to="/contact" className={({ isActive }) => isActive ? "active-link" : ""}>Contact Us</NavLink>
+          <NavLink to="/contact" className={({ isActive }) => isActive ? "active-link" : ""} onClick={closeNav}>Contact</NavLink>
         </li>
       </ul>
-      <div className="burger" onClick={toggleNav}>
-        <div className={`line1 ${isNavActive ? 'toggle' : ''}`}></div>
-        <div className={`line2 ${isNavActive ? 'toggle' : ''}`}></div>
-        <div className={`line3 ${isNavActive ? 'toggle' : ''}`}></div>
+      <div className={`burger ${isNavActive ? 'burger-open' : ''}`} onClick={toggleNav}>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
       </div>
     </nav>
   );

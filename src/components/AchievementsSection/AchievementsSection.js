@@ -4,7 +4,7 @@ import "./AchievementsSection.css";
 
 const achievements = [
   {
-    title: "Highest Mark - Coursework 1",
+    title: "One of the Highest Mark - Coursework 1",
     description:
       "Recognized as one of the best SDGP project at IIT for the year 24/25",
     year: "2024",

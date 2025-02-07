@@ -78,6 +78,7 @@
 
 .links-column a:hover {
     color: #4db8b8;
+    text-decoration: none;
 }
 
 .footer-social {

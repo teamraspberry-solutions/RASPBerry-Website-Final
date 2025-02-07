@@ -4,6 +4,7 @@ import Facebook from "./images/facebook.png";
 import Instagram from "./images/insta.png";
 import LinkedIn from "./images/linkedin.png";
 import Twitter from "./images/twitter3.png";
+import Youtube from "./images/youtube1.png";
 
 
 
@@ -22,12 +23,10 @@ const Footer = () => {
           <div className="links-column">
             <h4>Quick Links</h4>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Team</a></li>
-              <li><a href="#">Sponsorship</a></li>
-              <li><a href="#">Gallery</a></li>
-              <li><a href="#">Features</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/timeline">Timeline</a></li>
+              <li><a href="/team">About Us</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
 
@@ -40,6 +39,7 @@ const Footer = () => {
             <a href="https://x.com/team__RASPBerry?t=vUPV1Z7v53uEaHCLBv-4cw&s=09" aria-label="Twitter"><img src={Twitter}></img></a>
             <a href="https://www.instagram.com/team__raspberry?igsh=dXR4ZWJmeTNhNGs1" aria-label="Instagram"><img src={Instagram}></img></a>
             <a href="https://www.linkedin.com/company/team-raspberry/" aria-label="LinkedIn"><img src={LinkedIn}></img></a>
+            <a href="https://youtube.com/@teamraspberry?si=trf4weJLM58dUURU" aria-label="Youtube"><img src={Youtube}></img></a>
           </div>
         </div>
       </div>
