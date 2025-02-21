@@ -1,7 +1,7 @@
 import React from "react";
 import "./DownloadSection.css";
-import download1 from "./images/GooglePlay.png";
-import download2 from "./images/AppleStore.png";
+import download1 from "./images/download.jpg";
+import download2 from "./images/download2.png";
 
 const DownloadSection = () => {
   return (

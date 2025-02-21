@@ -26,7 +26,6 @@ nav {
     transition: background-color 0.3s ease;
 }
 
-
 .logo {
     height: 90px;
     width: 110px;
@@ -43,39 +42,41 @@ nav {
 
 /* Nav links */
 .nav-links {
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: right;
     width: 60%;
     transition: transform 0.3s ease;
-
 }
 
 .nav-links li {
     list-style: none;
     padding: 5%;
-    /* align-items: flex-end; */
     position: relative;
 }
 
-.nav-links a {
+/* Nav buttons */
+.nav-button {
+    background: none;
+    border: none;
     color: #fff;
-    text-decoration: none;
     font-weight: bold;
-    padding-bottom: 5px;
-    transition: color 0.3s ease, transform 0.3s ease, border-bottom 0.3s ease;
+    font-size: 16px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
     position: relative;
+}
+
+.nav-button:hover {
+    color: #008080;
 }
 
 /* Active link styling with animation */
-.nav-links a.active-link {
+.nav-button.active {
     color: #008080;
     font-size: 18px;
-    transition: transform 0.3s ease-in-out, color 0.3s ease, border-bottom 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #008080;
+    transition: transform 0.3s ease-in-out, color 0.3s ease;
 }
 
 /* Burger menu */
@@ -97,15 +98,14 @@ nav {
     background-color: #fff;
 }
 
-.burger.active{
+.burger.active {
     transform: rotate(90deg);
 }
-
 
 /* Main content styling */
 main {
     margin-top: 80px;
-    padding: 20px; 
+    padding: 20px;
     min-height: calc(1vh - 160px);
 }
 
@@ -147,31 +147,30 @@ footer a:hover {
         overflow-x: hidden;
     }
 
-/* Slider menu (nav-links) */
-.nav-links {
-    position: absolute;
-    right: 0;
-    top: 75px;
-    height: 92vh;
-    background: black url('./Nav.svg') repeat; 
-    box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.5); 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    transform: translateX(100%);
-    transition: transform 0.5s ease-in-out;
-}
+    /* Slider menu (nav-links) */
+    .nav-links {
+        position: absolute;
+        right: 0;
+        top: 75px;
+        height: 92vh;
+        background: black url('./Nav.svg') repeat;
+        box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+    }
 
-
-    /* Each link */
+    /* Each button */
     .nav-links li {
         opacity: 0;
         transform: translateX(50px);
         animation: fadeIn 0.5s ease-out forwards;
         width: 100%;
         text-align: center;
-        padding: 30px 0; 
+        padding: 30px 0;
     }
 
     /* Line separator between items */
@@ -210,7 +209,6 @@ footer a:hover {
     .nav-active {
         transform: translateX(0);
     }
-
 }
 
 /* Fade-in animation for nav links */

@@ -1,43 +1,41 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom"; 
 import "./NavBar.css";
-import logo from '../../Media/R_Robot.png';
+import logo from "../../Media/R_Robot.png";
 
-const NavBar = () => {
+const NavBar = ({ scrollToSection }) => {
   const [isNavActive, setIsNavActive] = useState(false);
 
   const toggleNav = () => {
     setIsNavActive(!isNavActive);
   };
 
-
-  const closeNav = () => {
-    setIsNavActive(false);
-    window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top on link click
+  const handleNavClick = (section) => {
+    scrollToSection(section);
+    setIsNavActive(false); // Close menu after clicking
   };
 
   return (
     <nav>
       <div className="logo">
-        <a href="/">
-        <img src={logo} alt="Logo" />
+        <a href="#" onClick={() => handleNavClick("hero")}>
+          <img src={logo} alt="Logo" />
         </a>
       </div>
       <ul className={`nav-links ${isNavActive ? "nav-active" : ""}`}>
         <li>
-          <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : ""} onClick={closeNav}>Home</NavLink>
+          <button className="nav-button" onClick={() => handleNavClick("home")}>Home</button>
         </li>
         <li>
-          <NavLink to="/timeline" className={({ isActive }) => isActive ? "active-link" : ""} onClick={closeNav}>Timeline</NavLink>
+          <button className="nav-button" onClick={() => handleNavClick("team")}>Team</button>
         </li>
         <li>
-          <NavLink to="/team" className={({ isActive }) => isActive ? "active-link" : ""} onClick={closeNav}>About Us</NavLink>
+          <button className="nav-button" onClick={() => handleNavClick("timeline")}>Timeline</button>
         </li>
         <li>
-          <NavLink to="/contact" className={({ isActive }) => isActive ? "active-link" : ""} onClick={closeNav}>Contact</NavLink>
+          <button className="nav-button" onClick={() => handleNavClick("contact")}>Contact</button>
         </li>
       </ul>
-      <div className={`burger ${isNavActive ? 'burger-open' : ''}`} onClick={toggleNav}>
+      <div className={`burger ${isNavActive ? "burger-open" : ""}`} onClick={toggleNav}>
         <div className="line"></div>
         <div className="line"></div>
         <div className="line"></div>
